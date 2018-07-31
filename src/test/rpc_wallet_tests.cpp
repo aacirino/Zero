@@ -46,6 +46,13 @@ bool find_error(const UniValue& objError, const std::string& expected) {
     return find_value(objError, "message").get_str().find(expected) != string::npos;
 }
 
+static UniValue ValueFromString(const std::string &str)
+{
+    UniValue value;
+    BOOST_CHECK(value.setNumStr(str));
+    return value;
+}
+
 BOOST_FIXTURE_TEST_SUITE(rpc_wallet_tests, TestingSetup)
 
 BOOST_AUTO_TEST_CASE(rpc_addmultisig)

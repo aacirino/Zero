@@ -1,0 +1,8 @@
+#include "common.h"
+#include "equihash.h"
+#include "hmac_sha256.h"
+#include "hmac_sha512.h"
+#include "ripemd160.h"
+#include "sha1.h"
+#include "sha256.h"
+#include "sha512.h"

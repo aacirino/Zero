@@ -1,0 +1,6 @@
+#include "zmq.h"
+#include "zmq_utils.h"
+#include "zmqabstractnotifier.h"
+#include "zmqconfig.h"
+#include "zmqnotificationinterface.h"
+#include "zmqpublishnotifier.h"

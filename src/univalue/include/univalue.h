@@ -25,11 +25,11 @@ public:
         typ = initialType;
         val = initialStr;
     }
-    #ifdef __APPLE__
+#ifdef __APPLE__
     UniValue(size_t val_) {
         setInt(val_);
     }
-    #endif
+#endif
     UniValue(uint64_t val_) {
         setInt(val_);
     }
@@ -59,9 +59,9 @@ public:
     bool setNull();
     bool setBool(bool val);
     bool setNumStr(const std::string& val);
-    #ifdef __APPLE__
+#ifdef __APPLE__
     bool setInt(size_t val_);
-    #endif
+#endif
     bool setInt(uint64_t val);
     bool setInt(int64_t val);
     bool setInt(int val_) { return setInt((int64_t)val_); }
@@ -100,12 +100,12 @@ public:
         std::string s(val_);
         return push_back(s);
     }
-    #ifdef __APPLE__
+#ifdef __APPLE__
     bool push_back(size_t val_) {
         UniValue tmpVal(val_);
         return push_back(tmpVal);
     }
-    #endif
+#endif
     bool push_back(uint64_t val_) {
         UniValue tmpVal(val_);
         return push_back(tmpVal);

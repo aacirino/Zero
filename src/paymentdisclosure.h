@@ -74,7 +74,7 @@ struct PaymentDisclosurePayload {
     uint256 esk;            // zcash/NoteEncryption.cpp
     uint256 txid;           // primitives/transaction.h
     #ifdef __APPLE__
-    uint64_t js;              // Index into CTransaction.vjoinsplit
+    uint64_t js;            // Index into CTransaction.vjoinsplit
     #else
     size_t js;              // Index into CTransaction.vjoinsplit
     #endif
