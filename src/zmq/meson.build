@@ -3,7 +3,7 @@ libzmq_src = [
   'zmqnotificationinterface.cpp',
   'zmqpublishnotifier.cpp' ]
 
-crypto_static_lib = static_library('libbitcoin_zmq',
+crypto_static_lib = static_library('bitcoin_zmq',
 sources : [libzmq_src],
-  cpp_pch : 'pch/libzmq_pch.hpp',
+  cpp_pch : 'pch/zmq_pch.hpp',
   include_directories : [ zero_inc_dirs ])

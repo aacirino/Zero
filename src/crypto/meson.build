@@ -6,14 +6,8 @@ crypto_src = [  'equihash.cpp',
                 'sha256.cpp',
                 'sha512.cpp' ]
 
-crypto_gen = generator(find_program('cat'),
-                        output : ['@BASENAME@_tcc.cpp'],
-                        arguments : ['@INPUT@'],
-                        capture : true)
-
-crypto_static_lib = static_library('libbitcoin_crypto',
-sources : [crypto_src],
-# sources : [crypto_src, crypto_gen.process(['equihash.tcc'])],
+crypto_static_lib = static_library('bitcoin_crypto',
+sources : [ crypto_src ],
   cpp_pch : 'pch/crypto_pch.hpp',
   include_directories : [ zero_inc_dirs ],
   cpp_args : '-DENABLE_MINING')

@@ -45,7 +45,7 @@ zerod_src = [
   'txmempool.cpp',
   'validationinterface.cpp' ]
 
-libbitcoin_server_inc = include_directories(
+bitcoin_server_inc = include_directories(
   'policy',
   'zcash',
   'univalue/include',
@@ -53,7 +53,7 @@ libbitcoin_server_inc = include_directories(
   'leveldb/helpers/memenv',
   'snark')
 
-libbitcoin_server_src = [
+bitcoin_server_src = [
   'sendalert.cpp',
   'addrman.cpp',
   'alert.cpp',
@@ -97,10 +97,10 @@ else
   extra_args = []
 endif
 
-libbitcoin_server_lib = static_library('libbitcoin_server',
-  sources : libbitcoin_server_src,
-  include_directories : [ libbitcoin_server_inc ],
-  cpp_pch : 'pch/libbitcoin_server_pch.hpp',
+bitcoin_server_lib = static_library('bitcoin_server',
+  sources : bitcoin_server_src,
+  include_directories : [ bitcoin_server_inc ],
+  cpp_pch : 'pch/bitcoin_server_pch.hpp',
   cpp_args : extra_args)
 
 # executable('zerod', sources : [zerod_src],
